@@ -26,10 +26,10 @@
         android:layout_width="46dp"
         android:layout_height="46dp"
         android:background="@null"
+        android:layout_marginTop="34dp"
+        android:id="@+id/button_led"
         android:layout_below="@+id/textInfo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:id="@+id/button_led" />
+        android:layout_centerHorizontal="true" />
 
     <ImageButton
         android:id="@+id/button_connect"
@@ -83,6 +83,8 @@
         android:id="@+id/button_grip_on"
         android:layout_width="46dp"
         android:layout_height="46dp"
+        app:srcCompat="@drawable/ic_grip_off"
+        android:background="@null"
         android:layout_below="@+id/button_grip_off"
         android:layout_alignLeft="@+id/button_grip_off"
         android:layout_alignStart="@+id/button_grip_off"
@@ -92,6 +94,8 @@
         android:id="@+id/button_grip_off"
         android:layout_width="46dp"
         android:layout_height="46dp"
+        app:srcCompat="@drawable/ic_grip_on"
+        android:background="@null"
         android:layout_alignLeft="@+id/textGrip"
         android:layout_alignStart="@+id/textGrip"
         android:layout_below="@+id/textGrip" />
@@ -111,7 +115,8 @@
         android:id="@+id/button_uArmOn"
         android:layout_width="46dp"
         android:layout_height="46dp"
-        app:srcCompat="@color/colorPrimary"
+        app:srcCompat="@drawable/ic_up"
+        android:background="@null"
         android:layout_below="@+id/textUpperArm"
         android:layout_alignLeft="@+id/textUpperArm"
         android:layout_alignStart="@+id/textUpperArm" />
@@ -119,7 +124,8 @@
         android:id="@+id/button_uArmOff"
         android:layout_width="46dp"
         android:layout_height="46dp"
-        app:srcCompat="@color/colorPrimary"
+        app:srcCompat="@drawable/ic_down"
+        android:background="@null"
         android:layout_alignTop="@+id/button_grip_on"
         android:layout_alignLeft="@+id/button_uArmOn"
         android:layout_alignStart="@+id/button_uArmOn" />
@@ -138,7 +144,8 @@
         android:id="@+id/button_base_up"
         android:layout_width="46dp"
         android:layout_height="46dp"
-        app:srcCompat="@color/colorPrimary"
+        app:srcCompat="@drawable/ic_up"
+        android:background="@null"
         android:layout_below="@+id/textBaseArm"
         android:layout_alignLeft="@+id/textBaseArm"
         android:layout_alignStart="@+id/textBaseArm" />
@@ -146,7 +153,8 @@
         android:id="@+id/button_base_down"
         android:layout_width="46dp"
         android:layout_height="46dp"
-        app:srcCompat="@color/colorPrimary"
+        app:srcCompat="@drawable/ic_down"
+        android:background="@null"
         android:layout_below="@+id/textuArmDown"
         android:layout_alignRight="@+id/button_connect"
         android:layout_alignEnd="@+id/button_connect"
@@ -157,7 +165,8 @@
         android:id="@+id/button_base_left"
         android:layout_width="46dp"
         android:layout_height="46dp"
-        app:srcCompat="@color/colorPrimary"
+        app:srcCompat="@drawable/ic_left"
+        android:background="@null"
         android:layout_below="@+id/textuArmUp"
         android:layout_toRightOf="@+id/button_led"
         android:layout_toEndOf="@+id/button_led" />
@@ -166,7 +175,8 @@
         android:id="@+id/button_base_right"
         android:layout_width="46dp"
         android:layout_height="46dp"
-        app:srcCompat="@color/colorPrimary"
+        app:srcCompat="@drawable/ic_right"
+        android:background="@null"
         android:layout_alignTop="@+id/button_uArmOff"
         android:layout_alignRight="@+id/textConnect"
         android:layout_alignEnd="@+id/textConnect" />
@@ -273,7 +283,8 @@
         android:id="@+id/button_car_up"
         android:layout_width="46dp"
         android:layout_height="46dp"
-        app:srcCompat="@color/colorPrimary"
+        app:srcCompat="@drawable/ic_up"
+        android:background="@null"
         android:layout_alignTop="@+id/textCarHeader"
         android:layout_alignRight="@+id/textuArmUp"
         android:layout_alignEnd="@+id/textuArmUp" />
@@ -291,7 +302,8 @@
         android:id="@+id/button_car_left"
         android:layout_width="46dp"
         android:layout_height="46dp"
-        app:srcCompat="@color/colorPrimary"
+        app:srcCompat="@drawable/ic_left"
+        android:background="@null"
         android:layout_alignTop="@+id/button_car_down"
         android:layout_alignLeft="@+id/textGripOff"
         android:layout_alignStart="@+id/textGripOff" />
@@ -309,7 +321,8 @@
         android:id="@+id/button_car_down"
         android:layout_width="46dp"
         android:layout_height="46dp"
-        app:srcCompat="@color/colorPrimary"
+        app:srcCompat="@drawable/ic_down"
+        android:background="@null"
         android:layout_below="@+id/textCarUp"
         android:layout_alignLeft="@+id/button_car_up"
         android:layout_alignStart="@+id/button_car_up" />
@@ -327,7 +340,8 @@
         android:id="@+id/button_car_right"
         android:layout_width="46dp"
         android:layout_height="46dp"
-        app:srcCompat="@color/colorPrimary"
+        app:srcCompat="@drawable/ic_right"
+        android:background="@null"
         android:layout_alignTop="@+id/button_car_down"
         android:layout_toRightOf="@+id/button_uArmOff"
         android:layout_toEndOf="@+id/button_uArmOff" />
@@ -340,4 +354,23 @@
         android:layout_below="@+id/button_car_right"
         android:layout_toLeftOf="@+id/textBaseLeft"
         android:layout_toStartOf="@+id/textBaseLeft" />
+
+    <TextView
+        android:id="@+id/textPower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textGripOn"
+        android:layout_alignStart="@+id/textGripOn"
+        android:layout_alignTop="@+id/textLight"
+        android:text="Power" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_power"
+        android:background="@null"
+        android:layout_below="@+id/textPower"
+        android:layout_alignLeft="@+id/textGripOff"
+        android:layout_alignStart="@+id/textGripOff" />
 </RelativeLayout>
