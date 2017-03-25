@@ -131,57 +131,6 @@
         android:layout_alignStart="@+id/button_uArmOn" />
 
     <TextView
-        android:id="@+id/textBaseArm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Arm Base"
-        android:layout_alignBaseline="@+id/textUpperArm"
-        android:layout_alignBottom="@+id/textUpperArm"
-        android:layout_alignLeft="@+id/button_base_down"
-        android:layout_alignStart="@+id/button_base_down" />
-
-    <ImageButton
-        android:id="@+id/button_base_up"
-        android:layout_width="46dp"
-        android:layout_height="46dp"
-        app:srcCompat="@drawable/ic_up"
-        android:background="@null"
-        android:layout_below="@+id/textBaseArm"
-        android:layout_alignLeft="@+id/textBaseArm"
-        android:layout_alignStart="@+id/textBaseArm" />
-    <ImageButton
-        android:id="@+id/button_base_down"
-        android:layout_width="46dp"
-        android:layout_height="46dp"
-        app:srcCompat="@drawable/ic_down"
-        android:background="@null"
-        android:layout_below="@+id/textuArmDown"
-        android:layout_alignRight="@+id/button_connect"
-        android:layout_alignEnd="@+id/button_connect"
-        android:layout_marginRight="26dp"
-        android:layout_marginEnd="26dp" />
-
-    <ImageButton
-        android:id="@+id/button_base_left"
-        android:layout_width="46dp"
-        android:layout_height="46dp"
-        app:srcCompat="@drawable/ic_left"
-        android:background="@null"
-        android:layout_below="@+id/textuArmUp"
-        android:layout_toRightOf="@+id/button_led"
-        android:layout_toEndOf="@+id/button_led" />
-
-    <ImageButton
-        android:id="@+id/button_base_right"
-        android:layout_width="46dp"
-        android:layout_height="46dp"
-        app:srcCompat="@drawable/ic_right"
-        android:background="@null"
-        android:layout_alignTop="@+id/button_uArmOff"
-        android:layout_alignRight="@+id/textConnect"
-        android:layout_alignEnd="@+id/textConnect" />
-
-    <TextView
         android:id="@+id/textGripOn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -242,16 +191,6 @@
         android:layout_alignEnd="@+id/button_base_left" />
 
     <TextView
-        android:id="@+id/textBaseRight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="7dp"
-        android:text="Right"
-        android:layout_below="@+id/button_base_left"
-        android:layout_toRightOf="@+id/textBaseUp"
-        android:layout_toEndOf="@+id/textBaseUp" />
-
-    <TextView
         android:id="@+id/textBaseDown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -268,16 +207,6 @@
         android:background="@color/colorDivider"
         android:layout_below="@+id/textBaseDown"
         android:id="@+id/view2" />
-
-    <TextView
-        android:id="@+id/textCarHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Car"
-        android:layout_below="@+id/view2"
-        android:layout_alignLeft="@+id/textInfo"
-        android:layout_alignStart="@+id/textInfo" />
 
     <ImageButton
         android:id="@+id/button_car_up"
@@ -297,25 +226,6 @@
         android:text="UP"
         android:layout_alignLeft="@+id/button_uArmOff"
         android:layout_alignStart="@+id/button_uArmOff" />
-
-    <ImageButton
-        android:id="@+id/button_car_left"
-        android:layout_width="46dp"
-        android:layout_height="46dp"
-        app:srcCompat="@drawable/ic_left"
-        android:background="@null"
-        android:layout_alignTop="@+id/button_car_down"
-        android:layout_alignLeft="@+id/textGripOff"
-        android:layout_alignStart="@+id/textGripOff" />
-
-    <TextView
-        android:id="@+id/textCarLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="LEFT"
-        android:layout_below="@+id/button_car_left"
-        android:layout_alignLeft="@+id/textGripOn"
-        android:layout_alignStart="@+id/textGripOn" />
 
     <ImageButton
         android:id="@+id/button_car_down"
@@ -373,4 +283,94 @@
         android:layout_below="@+id/textPower"
         android:layout_alignLeft="@+id/textGripOff"
         android:layout_alignStart="@+id/textGripOff" />
+
+    <ImageButton
+        android:id="@+id/button_car_left"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        app:srcCompat="@drawable/ic_left"
+        android:background="@null"
+        android:layout_alignTop="@+id/button_car_down"
+        android:layout_toRightOf="@+id/imageButton"
+        android:layout_toEndOf="@+id/imageButton" />
+
+    <TextView
+        android:id="@+id/textCarLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LEFT"
+        android:layout_below="@+id/button_car_left"
+        android:layout_alignLeft="@+id/button_car_left"
+        android:layout_alignStart="@+id/button_car_left"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp" />
+
+    <TextView
+        android:id="@+id/textBaseArm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Arm Base"
+        android:layout_above="@+id/textUpperArm"
+        android:layout_alignRight="@+id/button_connect"
+        android:layout_alignEnd="@+id/button_connect" />
+
+    <ImageButton
+        android:id="@+id/button_base_up"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        app:srcCompat="@drawable/ic_up"
+        android:background="@null"
+        android:layout_alignTop="@+id/button_uArmOn"
+        android:layout_alignLeft="@+id/textBaseArm"
+        android:layout_alignStart="@+id/textBaseArm" />
+
+    <TextView
+        android:id="@+id/textBaseRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="Right"
+        android:layout_below="@+id/button_base_left"
+        android:layout_toRightOf="@+id/button_base_up"
+        android:layout_toEndOf="@+id/button_base_up"
+        android:layout_marginStart="16dp" />
+
+    <ImageButton
+        android:id="@+id/button_base_right"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        app:srcCompat="@drawable/ic_right"
+        android:background="@null"
+        android:layout_above="@+id/textBaseRight"
+        android:layout_toRightOf="@+id/button_base_up"
+        android:layout_toEndOf="@+id/button_base_up" />
+
+    <ImageButton
+        android:id="@+id/button_base_left"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        app:srcCompat="@drawable/ic_left"
+        android:background="@null"
+        android:layout_alignTop="@+id/button_uArmOff"
+        android:layout_toLeftOf="@+id/button_base_right"
+        android:layout_toStartOf="@+id/button_base_right" />
+
+    <ImageButton
+        android:id="@+id/button_base_down"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        app:srcCompat="@drawable/ic_down"
+        android:background="@null"
+        android:layout_below="@+id/textBaseLeft"
+        android:layout_toLeftOf="@+id/textBaseLeft"
+        android:layout_toStartOf="@+id/textBaseLeft" />
+
+    <TextView
+        android:id="@+id/textCarHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Car"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/button_grip_on"
+        android:layout_toEndOf="@+id/button_grip_on" />
 </RelativeLayout>
