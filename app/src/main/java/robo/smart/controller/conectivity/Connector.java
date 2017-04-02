@@ -8,7 +8,9 @@ import android.util.Log;
 
 import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.IMqttActionListener;
+import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.IMqttToken;
+import org.eclipse.paho.client.mqttv3.MqttCallback;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
@@ -20,7 +22,7 @@ import java.io.UnsupportedEncodingException;
  * Created by Anurag on 20-03-2017.
  */
 
-public class Connector {
+public class Connector implements MqttCallback {
     private static final String TAG ="CONNECTOR_SERVICE" ;
     private static final String clientId = MqttClient.generateClientId();
     private String topic = "";
@@ -38,17 +40,22 @@ public class Connector {
     public void setOptions(){
         options = new MqttConnectOptions();
         options.setMqttVersion(MqttConnectOptions.MQTT_VERSION_3_1);
+        options.setConnectionTimeout(1);
     }
 
     public void setTopic(String topic){this.topic=topic;}
 
     public int Connect(){
         try {
+            setOptions();
+            client.setCallback(this);
             token = client.connect();
+            final int result;
             token.setActionCallback(new IMqttActionListener() {
                 @Override
                 public void onSuccess(IMqttToken asyncActionToken) {
                     // We are connected
+                   // result=1;
                     Log.d(TAG, "onSuccess");
                 }
 
@@ -62,7 +69,7 @@ public class Connector {
             return 1;
         } catch (MqttException e) {
             e.printStackTrace();
-            return 0;
+            return -1;
         }
     }
 
@@ -73,6 +80,7 @@ public class Connector {
         try {
             encodedPayload = payload.getBytes("UTF-8");
             MqttMessage message = new MqttMessage(encodedPayload);
+            Log.d(TAG,"Subcribing message : "+topic+" / "+message);
             client.publish(topic, message);
         } catch (UnsupportedEncodingException | MqttException e) {
             e.printStackTrace();
@@ -124,22 +132,43 @@ public class Connector {
     }
 
     public void Disconnect(){
-        try {
-            IMqttToken disconToken = client.disconnect();
-            disconToken.setActionCallback(new IMqttActionListener() {
-                @Override
-                public void onSuccess(IMqttToken asyncActionToken) {
-                    // we are now successfully disconnected
-                }
+        if(client.isConnected()) {
+            try {
+                IMqttToken disconToken = client.disconnect();
+                disconToken.setActionCallback(new IMqttActionListener() {
+                    @Override
+                    public void onSuccess(IMqttToken asyncActionToken) {
+                        // we are now successfully disconnected
+                    }
 
-                @Override
-                public void onFailure(IMqttToken asyncActionToken,
-                                      Throwable exception) {
-                    // something went wrong, but probably we are disconnected anyway
-                }
-            });
-        } catch (MqttException e) {
-            e.printStackTrace();
+                    @Override
+                    public void onFailure(IMqttToken asyncActionToken,
+                                          Throwable exception) {
+                        // something went wrong, but probably we are disconnected anyway
+                    }
+                });
+            } catch (MqttException e) {
+                e.printStackTrace();
+            }
         }
+    }
+
+    public boolean isConnected() {
+        return client.isConnected();
+    }
+
+    @Override
+    public void connectionLost(Throwable cause) {
+
+    }
+
+    @Override
+    public void messageArrived(String topic, MqttMessage message) throws Exception {
+
+    }
+
+    @Override
+    public void deliveryComplete(IMqttDeliveryToken token) {
+
     }
 }

@@ -23,9 +23,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <service android:name="org.eclipse.paho.android.service.MqttService" />
-
         <activity
             android:name=".MessageActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
@@ -37,6 +34,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="robo.smart.controller.MainActivity" />
         </activity>
-    </application>
 
+        <service android:name="org.eclipse.paho.android.service.MqttService" />
+    </application>
 </manifest>
